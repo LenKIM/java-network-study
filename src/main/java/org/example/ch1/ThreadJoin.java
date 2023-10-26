@@ -18,6 +18,7 @@ class ThreadJoin {
 
         t.join();
 
+
         System.out.println("Main() 종료");
     }
 }
