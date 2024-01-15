@@ -37,7 +37,7 @@ public class AdvancedChatServer {
 	
 	private void initResource() throws IOException {
 		// ByteBufferPool ����..
-		File bufferFile = new File("C:/Buffer.tmp");
+		File bufferFile = new File("/Users/len/study/java-network-study/data.txt");
 		if (!bufferFile.exists()) {
 			bufferFile.createNewFile();
 		}
@@ -52,9 +52,9 @@ public class AdvancedChatServer {
 		
 		// ThreadPool ����..
 		acceptThreadPool = new ThreadPool(
-				queue, "net.daum.javacafe.pool.thread.processor.AcceptProcessor");
+				queue, "org.example.len.ch16_advenced.pool.thread.processor.AcceptProcessor");
 		readWriteThreadPool = new ThreadPool(
-				queue, "net.daum.javacafe.pool.thread.processor.ReadWriteProcessor");
+				queue, "org.example.len.ch16_advenced.pool.thread.processor.ReadWriteProcessor");
 
 		// SelectorPool ����..
 		acceptSelectorPool = new AcceptSelectorPool(queue);
@@ -75,6 +75,7 @@ public class AdvancedChatServer {
 
 	public static void main(String[] args) {
 		AdvancedChatServer server = new AdvancedChatServer();
+
 	}
 	
 }

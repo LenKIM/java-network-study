@@ -4,14 +4,14 @@ import java.nio.ByteBuffer;
 
 public interface ByteBufferPoolIF {
 
-	public ByteBuffer getMemoryBuffer();
+    ByteBuffer getMemoryBuffer();
 
-	public ByteBuffer getFileBuffer();
-	
-	public void putBuffer(ByteBuffer buffer);
-	
-	public void setWait(boolean wait);
-	
-	public boolean isWait();
-	
+    ByteBuffer getFileBuffer();
+
+    void putBuffer(ByteBuffer buffer);
+
+    void setWait(boolean wait);
+
+    boolean isWait();
+
 }

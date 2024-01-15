@@ -10,7 +10,7 @@ public abstract class SelectorPoolAdaptor implements SelectorPoolIF {
 	private int roundRobinIndex = 0;
 	
 	private final Object monitor = new Object();
-	protected final List pool = new ArrayList();
+	protected final List<Thread> pool = new ArrayList<>();
 	
 	protected abstract Thread createHandler(int index);
 	public abstract void startAll();
@@ -21,7 +21,7 @@ public abstract class SelectorPoolAdaptor implements SelectorPoolIF {
 	 */
 	public Thread get() {
 		synchronized (monitor) {
-			return (Thread) pool.get( roundRobinIndex++ % size );
+			return pool.get( roundRobinIndex++ % size );
 		}
 	}
 

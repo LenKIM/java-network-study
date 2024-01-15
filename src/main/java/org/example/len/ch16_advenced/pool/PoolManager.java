@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class PoolManager {
 	
-	private static Map map = new HashMap();
+	private static final Map<String, Object> map = new HashMap<>();
 	
 	private static PoolManager instance = new PoolManager();
 	

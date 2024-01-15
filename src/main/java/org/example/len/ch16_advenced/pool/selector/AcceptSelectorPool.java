@@ -39,9 +39,8 @@ public class AcceptSelectorPool extends SelectorPoolAdaptor {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Thread handler = new AcceptHandler(queue, selector, port, index);
-		
-		return handler;
+
+        return new AcceptHandler(queue, selector, port, index);
 	}
 
 	/* (non-Javadoc)
